@@ -4,6 +4,10 @@ import sys
 import csv
 import pymysql.cursors
 
+# -----------------------------------------------------
+# CLASS
+#     - object that represents a single mushroom 
+# -----------------------------------------------------
 class PyMushroom:
     def __init__(self):
         self.mushroom = {}
@@ -23,6 +27,10 @@ class PyMushroom:
             values.append(self.mushroom[column])
         return values
 
+# -----------------------------------------------------
+# CLASS
+#     - object that represents a collection of mushrooms
+# -----------------------------------------------------
 class PyTroop:
     def __init__(self, db=None, table=None):
         self.db = db 
@@ -114,8 +122,9 @@ class PyTroop:
             cursor.execute(sql)
         self.mysql.commit()
 
-# MAIN FUNCTION --------------------------------
-
+# -----------------------------------------------------
+# MAIN 
+# -----------------------------------------------------
 def main():
     if len(sys.argv) != 2:
         print("usage: python main.py {path to csv file}")
