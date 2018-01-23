@@ -52,9 +52,32 @@
 ### `full_code/`
 - fully functional program
 
+---------------------------------------------------
 
+## Resources:
+- `docker run -e MYSQL_ROOT_PASSWORD=password1 mysql`
 
+```
+  Kendalls-MBP:example kendallweihe$ brew install mysql
+  ...
+  Kendalls-MBP:example kendallweihe$ mysql.server start
+  Starting MySQL
+  . SUCCESS!
+  Kendalls-MBP:example kendallweihe$ mysql -uroot
+  Welcome to the MySQL monitor.  Commands end with ; or \g.
+  Your MySQL connection id is 2
+  Server version: 5.7.21 Homebrew
 
+  Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+  Oracle is a registered trademark of Oracle Corporation and/or its
+  affiliates. Other names may be trademarks of their respective
+  owners.
+
+  Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+  mysql>
+```
 
 
 
