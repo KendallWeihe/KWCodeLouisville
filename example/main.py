@@ -114,10 +114,7 @@ class PyTroop:
             cursor.execute(sql)
         self.mysql.commit()
 
-    def __select_mushrooms():
-        pass
-
-# FUNCTIONS --------------------------------
+# MAIN FUNCTION --------------------------------
 
 def main():
     if len(sys.argv) != 2:
