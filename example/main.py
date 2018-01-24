@@ -10,21 +10,21 @@ import pymysql.cursors
 # -----------------------------------------------------
 class PyMushroom:
     def __init__(self):
-        self.mushroom = {}
+        self.attributes = {}
 
     def grow(self, columns, row):
         for column, element in zip(columns, row):
-            self.mushroom[column] = element 
+            self.attributes[column] = element 
         # self.print_mushroom() # NOTE: comment out
 
     def print_mushroom(self):
-        print(json.dumps(self.mushroom, indent=4))
+        print(json.dumps(self.attributes, indent=4))
 
     def harvest(self, columns):
-        # return [self.mushroom[key] for key in self.mushroom]
+        # return [self.attributes[key] for key in self.attributes]
         values = []
         for column in columns:
-            values.append(self.mushroom[column])
+            values.append(self.attributes[column])
         return values
 
 # -----------------------------------------------------
@@ -94,7 +94,7 @@ class PyTroop:
                                     )
 
     def __create_db(self, cursor):
-        sql = "CREATE DATABASE kagglethings"
+        sql = "CREATE DATABASE {}".format(self.db)
         cursor.execute(sql)
         self.mysql.commit()
 
@@ -104,7 +104,7 @@ class PyTroop:
         self.mysql.commit()
 
     def __create_table(self, cursor):
-        sql = "CREATE TABLE `mushrooms` ("
+        sql = "CREATE TABLE `{}` (".format(self.table)
         for i in range(len(self.columns)-1):
             column = self.columns[i]
             sql += "`{}` char(32), ".format(column)
